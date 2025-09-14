@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-const TOKEN =
-  "cd7ea4a8293465160efa9945e896c4e94d26ce1ff2ad022229ccfc358fbddd4f";
+import { getProductDetails } from "../services/api";
 
 function ProductModal({ productId, onClose }) {
   const [product, setProduct] = useState(null);
@@ -10,17 +8,9 @@ function ProductModal({ productId, onClose }) {
   useEffect(() => {
     if (!productId) return;
 
-    const fetchProductDetails = async () => {
+    const loadProduct = async () => {
       try {
-        const res = await fetch(
-          `/api/businessinventory/${productId}/public_product_detail.json?access_token=${TOKEN}`
-        );
-
-        if (!res.ok) {
-          throw new Error(`Failed: ${res.status}`);
-        }
-
-        const data = await res.json();
+        const data = await getProductDetails(productId); // use service
         console.log(data);
         setProduct(data);
       } catch (err) {
@@ -30,7 +20,7 @@ function ProductModal({ productId, onClose }) {
       }
     };
 
-    fetchProductDetails();
+    loadProduct();
   }, [productId]);
 
   if (!productId) return null;

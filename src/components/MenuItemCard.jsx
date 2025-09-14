@@ -4,7 +4,7 @@ function MenuCardItem({ item, onClick }) {
   return (
     <div
       className="bg-white rounded-2xl shadow-md hover:shadow-xl cursor-pointer transform hover:scale-105 transition duration-300 p-4 flex flex-col"
-      onClick={() => onClick(item.product_id)} // ✅ Pass product_id
+      onClick={() => onClick(item.product_id)} //  Pass product_id
     >
       {/* Image */}
       <div className="relative">
