@@ -39,7 +39,7 @@ function MenuList() {
   if (loading) return <p className="p-4">Loading menu...</p>;
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-6">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-6 mt-16">
       {items.map((item) => (
         <MenuItemCard
           key={item.product_id}
