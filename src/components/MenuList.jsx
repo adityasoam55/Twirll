@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import MenuItemCard from "./MenuItemCard";
 import ProductModal from "./ProductModal";
 import { getMenuItems } from "../services/api";
+import Loading from "./Loading";
 
 function MenuList() {
   const [items, setItems] = useState([]);
@@ -30,7 +31,13 @@ function MenuList() {
     item.product_name.toLowerCase().includes(search.toLowerCase())
   );
 
-  if (loading) return <p className="p-6 text-center">Loading menu...</p>;
+  if (loading) {
+    return (
+      <div className="mt-24">
+        <Loading />
+      </div>
+    );
+  }
   if (error) return <p className="p-6 text-center text-red-500">{error}</p>;
 
   return (
@@ -42,7 +49,7 @@ function MenuList() {
           placeholder="Search items..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="border rounded px-3 py-2 w-full md:w-1/2 shadow-sm focus:outline-none focus:ring focus:ring-green-300"
+          className="border rounded px-3 py-2 w-full md:w-1/2 shadow-sm focus:outline-none focus:border-green-300"
         />
       </div>
 

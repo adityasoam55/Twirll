@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getProductDetails } from "../services/api";
+import Loading from "./Loading";
 
 function ProductModal({ productId, onClose }) {
   const [product, setProduct] = useState(null);
@@ -37,7 +38,7 @@ function ProductModal({ productId, onClose }) {
         </button>
 
         {loading ? (
-          <p>Loading product...</p>
+          <Loading />
         ) : !product ? (
           <p>Product not found.</p>
         ) : (
