@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import MenuItemCard from "./MenuItemCard";
 import ProductModal from "./ProductModal";
-import ProductDetailsPage from "./ProductDetailsPage";
 
 const TOKEN =
   "cd7ea4a8293465160efa9945e896c4e94d26ce1ff2ad022229ccfc358fbddd4f";
