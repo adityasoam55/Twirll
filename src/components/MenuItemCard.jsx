@@ -9,7 +9,7 @@ function MenuCardItem({ item, onClick }) {
       {/* Image */}
       <div className="relative">
         <img
-          src={item.productpic || "https://via.placeholder.com/150"}
+          src={item.productpic}
           alt={item.product_name}
           className="w-full h-40 object-cover rounded-xl"
         />

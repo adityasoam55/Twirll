@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 mt-20">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* About */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -26,7 +26,7 @@ function Footer() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-xl font-bold text-white mb-4">Quick Links</h2>
-          <ul className="space-y-2">
+          <ul className="flex gap-3">
             {["Home", "Menu", "About", "Contact"].map((link, idx) => (
               <li key={idx}>
                 <a
