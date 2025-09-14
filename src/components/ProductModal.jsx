@@ -55,24 +55,24 @@ function ProductModal({ productId, onClose }) {
             <h2 className="text-2xl font-bold">{product.product_name}</h2>
 
             <div className="flex gap-2 mt-3 overflow-x-auto">
-              {product.product_photos_all?.map((photo, idx) => (
+              {product.map((item) => (
                 <img
-                  key={idx}
-                  src={photo.photo_url}
-                  alt={product.product_name}
+                  key={item.id}
+                  src={item.productpic}
+                  alt={item.product_name}
                   className="w-32 h-32 object-cover rounded"
                 />
               ))}
             </div>
 
             <p className="mt-4 text-gray-700">
-              {product.additional_data?.short_description ||
+              {product[0].additional_data?.short_description ||
                 "No description available."}
             </p>
 
             <p className="mt-2 text-green-600 font-bold">
-              {product.product_var_inventory_lists?.[0]?.currency}{" "}
-              {product.product_var_inventory_lists?.[0]?.selling_price}
+              {product[0].product_var_inventory_lists?.[0]?.currency}{" "}
+              {product[0].product_var_inventory_lists?.[0]?.selling_price}
             </p>
           </>
         )}
